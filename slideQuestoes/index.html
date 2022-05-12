@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Tabelas</title>
+    <title>Perguntas e Respostas</title>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -20,93 +20,85 @@
 <body>
     <script>
         $(document).ready(function(){
-            $(".card.resposta").hide();
-            $(".card.pergunta").click(function(){
-                $(this).siblings('.card.resposta').slideToggle(1000);
+            $(".list-group-item").hide();
+
+            $("button").click(function(){
+                $(this).parent(".card-header").siblings('.list-group.list-group-flush').children(".list-group-item").slideToggle(1000);
+            });
+
+            $(".card-header.exemplo2").on({
+                mouseenter: function(){
+                    $(this).siblings('.list-group.list-group-flush').children(".list-group-item").slideDown(1000);
+                },
+                mouseleave: function(){
+                    $(this).siblings('.list-group.list-group-flush').children(".list-group-item").slideUp(1000);
+                }
+            });
+
+            $(".card-header.exemplo3").click(function(){
+                $(this).siblings('.list-group.list-group-flush').children(".list-group-item").slideToggle(1000);
             });
         });
     </script>
+    <br>
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
-                <div>
-                    <div class="card pergunta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Qual a capital do Brasil?</p>
-                        </div>                      
+            <div class="col-lg-6">
+                <div class="card" style="width: auto;">
+                    <div class="card-header exemplo1 d-flex justify-content-between">
+                        Qual a capital do Brasil?
+                        <button type="button" class="btn btn-primary">Resposta</button>
                     </div>
-                    <div class="card resposta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Brasília</p>
-                        </div>                      
-                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Resp: Brasília</li>
+                    </ul>
                 </div>
                 <br>           
-                <div>
-                    <div class="card pergunta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Qual a capital da Alemanha?</p>
-                        </div>                      
+                <div class="card" style="width: auto;">
+                    <div class="card-header exemplo2">
+                        Qual a capital da Alemanha?
                     </div>
-                    <div class="card resposta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Berlim</p>
-                        </div>                      
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Resp: Berlim</li>
+                    </ul>
+                </div>
+                <br>
+                <div class="card" style="width: auto;">
+                    <div class="card-header exemplo3">
+                        Qual a capital de Portugal?
                     </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Resp: Lisboa</li>
+                    </ul>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div>
-                    <div class="card pergunta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Qual a capital do Uruguai?</p>
-                        </div>                      
+            <div class="col-lg-6">
+                <div class="card" style="width: auto;">
+                    <div class="card-header exemplo1 d-flex justify-content-between">
+                        Qual a capital do Uruguai?
+                        <button type="button" class="btn btn-primary">Resposta</button>
                     </div>
-                    <div class="card resposta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Montevidéu</p>
-                        </div>                      
-                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Resp: Montevidéu</li>
+                    </ul>
                 </div>
                 <br>           
-                <div>
-                    <div class="card pergunta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Qual a capital do Chile?</p>
-                        </div>                      
+                <div class="card" style="width: auto;">
+                    <div class="card-header exemplo2">
+                        Qual a capital do Chile?
                     </div>
-                    <div class="card resposta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Santiago</p>
-                        </div>                      
-                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Resp: Santiago</li>
+                    </ul>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div>
-                    <div class="card pergunta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Qual a capital do Chile?</p>
-                        </div>                      
+                <br>
+                <div class="card" style="width: auto;">
+                    <div class="card-header exemplo3">
+                        Qual a capital da Argentina?
                     </div>
-                    <div class="card resposta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Lima</p>
-                        </div>                      
-                    </div>
-                </div>
-                <br>           
-                <div>
-                    <div class="card pergunta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Qual a capital do Chile?</p>
-                        </div>                      
-                    </div>
-                    <div class="card resposta" style="width: auto;">
-                        <div class="card-body">
-                            <p class="card-text">Quito</p>
-                        </div>                      
-                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Resp: Buenos Aires</li>
+                    </ul>
                 </div>
             </div>
         </div>
